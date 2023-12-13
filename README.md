@@ -19,7 +19,7 @@ The project requires the following libraries:
 
 ```bash
 git clone https://github.com/BigAirDaddy/nflgamepredictor
-cd nflpredictor
+cd nflgamepredictor
 ```
 
 **Step 2:** Install the requirements
