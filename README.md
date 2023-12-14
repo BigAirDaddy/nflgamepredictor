@@ -13,6 +13,7 @@ The project requires the following libraries:
 - Scikit-learn
 - Joblib
 - Scipy
+- Cuda-capable GPU (code can be modified to run on a CPU only)
 
 ## Installation
 **Step 1:** Clone the repository to your local machine.
