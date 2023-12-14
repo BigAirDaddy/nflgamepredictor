@@ -5,7 +5,7 @@ import joblib  # to load the scaler and encoder
 import torch.nn as nn
 import scipy.sparse
 
-# Define your model class (it should be the same as the one used for training)
+
 class NFLPredictor(nn.Module):
     def __init__(self, input_size):
         super(NFLPredictor, self).__init__()
@@ -26,7 +26,7 @@ class NFLPredictor(nn.Module):
         x = self.relu(self.fc3(x))
         return self.sigmoid(self.fc4(x))
 
-# Load the trained model checkpoint
+
 def load_model():
     model_checkpoint_path = 'model/nfl_predictor_model.pth'
     model = NFLPredictor(input_size=215)  # Adjust the number of input features to match your model
