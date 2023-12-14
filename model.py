@@ -11,17 +11,16 @@ import scipy.sparse
 from torch.utils.tensorboard import SummaryWriter
 from sklearn.metrics import accuracy_score
 
-# Check if CUDA is available
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Load the dataset
+
 df = pd.read_csv('data/nfl_games.csv')
 
-# Convert 'date' to datetime and extract relevant features (e.g., year)
 df['date'] = pd.to_datetime(df['date'])
 df['year'] = df['date'].dt.year
 
-# Select relevant features and target
+
 features = df[['season', 'neutral', 'playoff', 'team1', 'team2', 'elo1', 'elo2', 'elo_prob1']]
 target = df['outcome']
 
@@ -137,13 +136,8 @@ for epoch in range(num_epochs):
     avg_loss = total_loss / len(train_loader)
     print(f'Epoch {epoch+1}/{num_epochs}, Avg Loss: {avg_loss}')
 
-# Close the TensorBoard writer
-writer.close()
-# Close the TensorBoard writer
 writer.close()
 
-# Close the TensorBoard writer
-writer.close()
 # Evaluate the model
 model.eval()
 with torch.no_grad():
