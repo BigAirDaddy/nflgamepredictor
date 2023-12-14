@@ -1,5 +1,5 @@
 import pandas as pd
-import predict  # Make sure predict.py is in the same directory or is in your PYTHONPATH
+import predict  
 from colorama import Fore, Style
 
 
@@ -10,11 +10,11 @@ print(Style.RESET_ALL,"I am not responsible for any losses associated with these
 
 
 
-# Function to calculate ELO probability
+# calculate ELO probability
 def calculate_elo_prob1(elo1, elo2):
     return 1 / (1 + 10 ** ((elo2 - elo1) / 400))
 
-# Function to prompt for input and create a DataFrame
+
 def get_user_input():
     team1 = input("Enter the home team using three letters (e.g., CLE): ").upper()
     team2 = input("Enter the away team using three letters (e.g., HOU): ").upper()
@@ -39,16 +39,15 @@ def get_user_input():
         'elo_prob1': [elo_prob1]
     })
     
-    # You could save this to a CSV if needed:
+    
     # input_data.to_csv('user_input.csv', index=False)
     
     return input_data
 
-# Get user input as a DataFrame
+
 user_input_df = get_user_input()
 
-# Pass the DataFrame directly to the predict.make_prediction function
-# Make sure predict.py is set up to handle a DataFrame input to make_prediction
+
 prediction = predict.make_prediction(user_input_df)
 
 # Display the prediction
